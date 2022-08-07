@@ -12,5 +12,5 @@ struct FMovementPath
 {
 	GENERATED_BODY()
 public:
-
+	int32 Age = 10;
 };
