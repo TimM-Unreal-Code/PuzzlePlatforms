@@ -2,16 +2,26 @@
 
 
 #include "MovingPlatform.h"
-#include "MovementPath.h"
 
+// Sets default values
+AMovingPlatform::AMovingPlatform()
+{
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+// Called when the game starts or when spawned
 void AMovingPlatform::BeginPlay()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	FMovementPath Person;
-	Person.Age = 3;
+	Super::BeginPlay();
+	
 }
 
-void AMovingPlatform::Tick(float DeltaSeconds)
+// Called every frame
+void AMovingPlatform::Tick(float DeltaTime)
 {
+	Super::Tick(DeltaTime);
 
 }
+

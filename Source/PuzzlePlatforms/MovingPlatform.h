@@ -2,21 +2,27 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "Engine/StaticMeshActor.h"
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
 #include "MovingPlatform.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class PUZZLEPLATFORMS_API AMovingPlatform : public AStaticMeshActor
 {
 	GENERATED_BODY()
-	protected:
-		virtual void BeginPlay() override;
-	public:
-		virtual void Tick(float DeltaSeconds) override;
-	private:
+	
+public:	
+	// Sets default values for this actor's properties
+	AMovingPlatform();
 
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(Category = "Transforms", EditAnywhere, meta = (MakeEditWidget = true))
+		FTransform m_FT_Destination;
 };
